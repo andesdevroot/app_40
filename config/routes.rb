@@ -9,6 +9,16 @@ devise_scope :user do
 end
 
 
+resources :posts do
+  collection do
+    get 'hobby'
+    get 'study'
+    get 'team'
+  end
+end
+
+
+
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#index'
